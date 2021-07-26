@@ -18,11 +18,13 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        List(courseArray) { course in
-            VStack {
-                Text(course.courseName)
-                    .padding(.trailing)
-            }
+        NavigationView {
+            List(courseArray) { course in
+                VStack {
+                    Text(course.courseName)
+                        .padding(.trailing)
+                }
+            }.navigationBarTitle("Курсы SkillFactory")
         }
     }
 }
