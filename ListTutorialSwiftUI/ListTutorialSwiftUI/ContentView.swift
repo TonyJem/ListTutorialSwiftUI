@@ -18,7 +18,12 @@ struct ContentView: View {
     ]
     
     var body: some View {
-            
+        List(courseArray) { course in
+            VStack {
+                Text(course.courseName)
+                    .padding(.trailing)
+            }
+        }
     }
 }
 
