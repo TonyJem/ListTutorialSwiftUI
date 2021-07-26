@@ -29,11 +29,34 @@ struct ContentView: View {
     }
 }
 
-
 struct CourseObject: Identifiable {
     let id = UUID()
     let courseName: String
     let aboutCourse: String
+}
+
+struct DetailScreen: View {
+    let courseItem: CourseObject
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            
+            HStack {
+                Text(courseItem.courseName)
+                    .font(.largeTitle)
+                    .bold()
+                
+                Spacer()
+            }
+            
+            Text(courseItem.aboutCourse)
+                .padding(.top)
+            
+            Spacer()
+        }
+        .padding()
+        .navigationBarTitle(Text(courseItem.courseName), displayMode: .inline)
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
